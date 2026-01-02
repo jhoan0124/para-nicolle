@@ -123,29 +123,31 @@
 
         /* --- MÚSICA YOUTUBE --- */
 
-		/* Esto hace que se vean en columnas y no una encima de otra */
+		/* Esto obliga a que los videos se pongan en columnas */
 .grid-canciones {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Máximo 3 por fila en PC */
+    gap: 20px;
     margin-top: 30px;
+    padding: 10px;
 }
 
-/* Esto le da el fondo blanco y el borde redondeado como a la principal */
+/* El contenedor de cada video de la cuadrícula */
 .caja-video {
     background: white;
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* El estilo de la letra para los títulos */
-.titulo-cancion {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.3rem;
-    color: #ff4d6d;
-    margin-top: 15px;
+/* Importante: Esto controla que el video no se desborde */
+.caja-video .video-wrapper {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 	
         /* --- GALAXIA FINAL --- */
@@ -357,6 +359,7 @@ function cerrarImagen() {
     </script>
 </body>
 </html>
+
 
 
 
