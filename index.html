@@ -122,26 +122,32 @@
         @keyframes zoomIn { from { transform: scale(0.5); } to { transform: scale(1); } }
 
         /* --- MÚSICA YOUTUBE --- */
-		.caja-video {
+
+		/* Esto hace que se vean en columnas y no una encima de otra */
+.grid-canciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Esto le da el fondo blanco y el borde redondeado como a la principal */
+.caja-video {
     background: white;
     padding: 15px;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
 }
 
-.caja-video:hover {
-    transform: translateY(-5px);
-}
-
+/* El estilo de la letra para los títulos */
 .titulo-cancion {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: #ff4d6d;
     margin-top: 15px;
-    margin-bottom: 5px;
 }
-
+	
         /* --- GALAXIA FINAL --- */
         #pantalla-galaxia {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -358,6 +364,7 @@ function cerrarImagen() {
     </script>
 </body>
 </html>
+
 
 
 
