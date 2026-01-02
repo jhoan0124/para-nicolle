@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -122,32 +122,33 @@
         @keyframes zoomIn { from { transform: scale(0.5); } to { transform: scale(1); } }
 
         /* --- MÚSICA YOUTUBE --- */
-/* Esto obliga a que los videos se pongan en columnas */
-.grid-canciones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Máximo 3 por fila en PC */
-    gap: 20px;
-    margin-top: 30px;
-    padding: 10px;
-}
 
-/* El contenedor de cada video de la cuadrícula */
 .caja-video {
     background: white;
     padding: 15px;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Importante: Esto controla que el video no se desborde */
-.caja-video .video-wrapper {
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
+.caja-video:hover {
+    transform: translateY(-5px);
 }
+
+.titulo-cancion {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: #ff4d6d;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+        .video-wrapper {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .grid-canciones { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;}
+
         /* --- GALAXIA FINAL --- */
         #pantalla-galaxia {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -235,44 +236,56 @@
                  <div class="polaroid" style="--r:-2deg;"onclick="abrirImagen('foto13.jpg')"><img src="foto13.jpg"><p>El ujummm</p></div>
                 <div class="polaroid" style="--r:3deg;"onclick="abrirImagen('foto14.jpg')"><img src="foto14.jpg"><p>Mis sueños y metas</p></div>
                 <div class="polaroid" style="--r:3deg;"onclick="abrirImagen('foto15.jpg')"><img src="foto15.jpg"><p>perritos, gatito y nuestra fundación</p></div>
-           		 </div>
-			</section> <section id="videos" class="seccion hidden">
-            <h1 class="titulo-bienvenida" style="font-size: 3.5rem;">Te dedico todas las canciones</h1>
-
-            <div class="caja-video" style="max-width: 750px; margin: 0 auto 40px;">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/D9W4DLjmoOM" allowfullscreen></iframe>
-                </div>
-                <p class="titulo-cancion" style="font-size: 1.8rem; font-family: 'Dancing Script', cursive; color: #ff4d6d; margin-top: 15px;">✨ Destino o Casualidad - Melendi ✨</p>
-            </div>
-
-            <hr style="border: 0; height: 1px; background: #ffccd5; margin: 40px 0;">
-
-            <div class="grid-canciones">
-                <div class="caja-video">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/0yW7w8F2TVA"></iframe>
-                    </div>
-                    <p class="titulo-cancion" style="font-family: 'Dancing Script', cursive; color: #ff4d6d; margin-top: 10px;">Cuando Nadie Ve - Morat</p>
-                </div>
-
-                <div class="caja-video">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/GNEcl0D9-UA"></iframe>
-                    </div>
-                    <p class="titulo-cancion" style="font-family: 'Dancing Script', cursive; color: #ff4d6d; margin-top: 10px;">No Hay Nadie Más - Yatra</p>
-                </div>
-
-                <div class="caja-video">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/sD9_l3oDOag"></iframe>
-                    </div>
-                    <p class="titulo-cancion" style="font-family: 'Dancing Script', cursive; color: #ff4d6d; margin-top: 10px;">Say You Won't Let Go</p>
-                </div>
             </div>
         </section>
-    </main>
 	
+	<section id="videos" class="seccion hidden">
+    <h1 class="titulo-bienvenida" style="font-size: 3.5rem;">Te dedico todas las canciones</h1>
+
+    <div class="caja-video principal" style="max-width: 700px; margin: 0 auto 40px;">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/D9W4DLjmoOM?rel=0" allowfullscreen></iframe>
+        </div>
+        <p class="titulo-cancion" style="font-size: 1.8rem;">✨ Destino o Casualidad - Melendi ✨</p>
+    </div>
+
+    <hr style="border: 0; height: 1px; background: #ffccd5; margin-bottom: 40px;">
+
+    <div class="grid-canciones">
+        
+        <div class="caja-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/0yW7w8F2TVA"></iframe>
+            </div>
+            <p class="titulo-cancion">Título de la Canción 2</p>
+        </div>
+
+        <div class="caja-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/GNEcl0D9-UA"></iframe>
+            </div>
+            <p class="titulo-cancion">Título de la Canción 3</p>
+        </div>
+
+        <div class="caja-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/sD9_l3oDOag"></iframe>
+            </div>
+            <p class="titulo-cancion">Título de la Canción 4</p>
+        </div>
+
+        <div class="caja-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/GNEcl0D9-UA"></iframe>
+            </div>
+            <p class="titulo-cancion">Título de la Canción 5</p>
+        </div>
+
+    </div>
+</section>
+    
+    </main>
+
 <div id="modal-imagen" onclick="cerrarImagen()">
     <img id="img-grande" src="">
     <p style="color: white; position: absolute; bottom: 20px;">Toca cualquier lugar para cerrar</p>
@@ -321,17 +334,10 @@
 
         function abrirCarta() { document.getElementById('sobre-postal').classList.add('hidden'); document.getElementById('carta-abierta').classList.remove('hidden'); }
         function cerrarCarta() { document.getElementById('carta-abierta').classList.add('hidden'); document.getElementById('sobre-postal').classList.remove('hidden'); }
+	
+	function abrirImagen(src) { document.getElementById('img-grande').src = src; document.getElementById('modal-imagen').style.display = "flex"; }
+        function cerrarImagen() { document.getElementById('modal-imagen').style.display = "none"; }
 
-	function abrirImagen(src) {
-    const modal = document.getElementById('modal-imagen');
-    const imgGrande = document.getElementById('img-grande');
-    imgGrande.src = src;
-    modal.style.display = "flex";
-}
-
-function cerrarImagen() {
-    document.getElementById('modal-imagen').style.display = "none";
-}
 
         function finalizarVisita() {
             const galaxia = document.getElementById('pantalla-galaxia');
